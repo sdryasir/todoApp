@@ -23,3 +23,7 @@
 .para{
     cursor: pointer;
 }
+
+.bg-red{
+    background-color: red;
+}
