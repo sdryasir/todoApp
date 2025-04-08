@@ -37,4 +37,11 @@ function test(a){
 }
 
 
-test({length:30})
+export const images = [
+  "https://www.medcollege.edu.gr/wp-content/uploads/2018/06/entry-and-language-requirements.jpg",
+  "https://avatars.mds.yandex.net/i?id=3ec03b47ce7cce83e78088856afdfea3803c1826-5475958-images-thumbs&n=13",
+  "https://avatars.mds.yandex.net/i?id=fd97dca8a447288640c9cc47487d8c44e5b042640d0e2fc9-5331420-images-thumbs&n=13",
+];
+
+
+
