@@ -11,6 +11,7 @@
     left: 50%;
     background-color: #fff;
     transform: translate(-50%, -50%);
+    padding:px ;
 }
 .close-btn{
     background-color: red;
@@ -20,10 +21,3 @@
     right: 0;
 }
 
-.para{
-    cursor: pointer;
-}
-
-.bg-red{
-    background-color: red;
-}

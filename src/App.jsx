@@ -1,44 +1,28 @@
-import { useState } from "react";
 import './App.css'
-import Card from './components/Card';
-import Carousel from './components/Carousel';
-import Navbar from './components/Navbar';
-import Slider from "./components/Slider";
-import { navItems } from "./data";
-import { cards } from "./data";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-//props (Properties)
+import { useState } from 'react';
+import Modal from './components/Modal';
 
 function App() {
 
- const [items, setItems] = useState(navItems);
-  const [cardsData, setCardsData] = useState(cards);
- 
+
+  let [isOpen, setIsOpen] = useState(false);
+
+  const handleModalOpen = ()=>{
+    setIsOpen(true);
+  }
+  const handleModalClose = (t)=>{
+    console.log(t);
+    
+    setIsOpen(false);
+  }
 
   return (
-    <div className="container">
-      <Navbar items={items}/>
-      <Slider/>
-      <Swiper
-        spaceBetween={50}
-        slidesPerView={3}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
-      >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-      </Swiper>
-      <div className="row">
-      {
-        cardsData.map((c)=>{
-          return <Card key={c.id} data={c}/>
-        })
-      }
+    <div>
 
-      </div>
+      <button onClick={handleModalOpen}>Open Modal</button>
+      {
+        isOpen ? <Modal close={handleModalClose}/>  : ''
+      }
     </div>
   )
 
@@ -54,11 +38,3 @@ export default App;
 
 
 
-
-/*
-XML:
-1 - We can create custom tags.
-2 - We can specify custom props (properties/attributes)
-3 - XML restrics us to provide closing of all the tags.
-
-*/
