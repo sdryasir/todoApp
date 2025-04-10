@@ -1,29 +1,22 @@
 import './App.css'
+
+import Home from './components/Home';
 import { useState } from 'react';
-import Modal from './components/Modal';
+
+import { createContext } from "react";
+
+export const ThemeContext = createContext(); //Step 1 - Create context
 
 function App() {
 
+  const [theme, setTheme] = useState('dark');
 
-  let [isOpen, setIsOpen] = useState(false);
-
-  const handleModalOpen = ()=>{
-    setIsOpen(true);
-  }
-  const handleModalClose = (t)=>{
-    console.log(t);
-    
-    setIsOpen(false);
-  }
 
   return (
-    <div>
-
-      <button onClick={handleModalOpen}>Open Modal</button>
-      {
-        isOpen ? <Modal close={handleModalClose}/>  : ''
-      }
-    </div>
+    //Step 2 - Provide the context
+    <ThemeContext.Provider value={{theme, setTheme, a}}> 
+      <Home/>
+    </ThemeContext.Provider>
   )
 
 }
