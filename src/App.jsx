@@ -1,22 +1,22 @@
 import './App.css'
-
 import Home from './components/Home';
 import { useState } from 'react';
 
-import { createContext } from "react";
+import { createContext } from 'react';
 
-export const ThemeContext = createContext(); //Step 1 - Create context
+
+export const CartContext = createContext();//create context
 
 function App() {
 
-  const [theme, setTheme] = useState('dark');
-
+  const [cart, setCart] = useState([]);
 
   return (
-    //Step 2 - Provide the context
-    <ThemeContext.Provider value={{theme, setTheme, a}}> 
+
+    //provide the context
+    <CartContext.Provider value={{cart, setCart}}>
       <Home/>
-    </ThemeContext.Provider>
+    </CartContext.Provider>
   )
 
 }
